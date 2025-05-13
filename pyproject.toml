@@ -1,0 +1,49 @@
+[project]
+name = "fin-agent"
+version = "0.1.0"
+description = "Agent capable of answering financial questions"
+readme = "README.md"
+authors = [
+    { name = "Tobi Lipede", email = "12844474+TLipede@users.noreply.github.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "agno>=1.4.5",
+    "fastapi>=0.115.12",
+    "groq>=0.24.0",
+    "httpx>=0.28.1",
+    "huggingface-hub>=0.31.1",
+    "jpype1>=1.5.2",
+    "matplotlib>=3.10.3",
+    "numpy>=1,<2",
+    "polars>=1.29.0",
+    "pydantic>=2.11.4",
+    "pydantic-settings>=2.9.1",
+    "pymupdf>=1.25.5",
+    "pypdf2>=3.0.1",
+    "rich>=14.0.0",
+    "sqlalchemy>=2.0.40",
+    "tabula-py>=2.10.0",
+    "tabulate>=0.9.0",
+    "typer>=0.15.3",
+    "ujson>=5.10.0",
+    "uvicorn>=0.34.2",
+]
+
+[project.scripts]
+run-playground = "fin_agent.main:run_playground"
+run-evaluations = "fin_agent.evaluate:run_evaluator"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "icecream>=2.1.4",
+    "ipykernel>=6.29.5",
+    "ipython>=8.36.0",
+    "isort>=6.0.1",
+    "pytest>=8.3.5",
+    "ruff>=0.11.8",
+]
